@@ -1,0 +1,51 @@
+export const guestDemoInfo = {
+	shippingInfo: {
+		firstName: process.env.REACT_APP_GUEST_CARDFIRSTNAME!,
+		lastName: process.env.REACT_APP_GUEST_CARDLASTNAME!,
+		address: process.env.REACT_APP_GUEST_ADDRESS!,
+		aptSuiteEtc: "",
+		state: process.env.REACT_APP_GUEST_STATE!,
+		city: process.env.REACT_APP_GUEST_CITY!,
+		zipCode: process.env.REACT_APP_GUEST_ZIPCODE!,
+		phone: process.env.REACT_APP_GUEST_PHONE!,
+		email: process.env.REACT_APP_GUEST_EMAIL!,
+	},
+	paymentInfo: {
+		cardNumber: process.env.REACT_APP_GUEST_CARDNUMBER!,
+		cardHolderFirstName: process.env.REACT_APP_GUEST_CARDFIRSTNAME!,
+		cardHolderLastName: process.env.REACT_APP_GUEST_CARDLASTNAME!,
+		expiryDateMonth: process.env.REACT_APP_GUEST_CARDEXPMONTH!,
+		expiryDateYear: process.env.REACT_APP_GUEST_CARDEXPYEAR!,
+		securityCode: process.env.REACT_APP_GUEST_CARDCVV!,
+		phone: process.env.REACT_APP_GUEST_PHONE!,
+		subTotal: 0,
+	},
+	completedPaymentForm: true,
+	completedShippingForm: true,
+};
+
+export const adminDemoInfo = {
+	shippingInfo: {
+		firstName: process.env.REACT_APP_GUEST_CARDFIRSTNAME!,
+		lastName: process.env.REACT_APP_GUEST_ADMIN_CARDLASTNAME!,
+		address: process.env.REACT_APP_GUEST_ADDRESS!,
+		aptSuiteEtc: "",
+		state: process.env.REACT_APP_GUEST_STATE!,
+		city: process.env.REACT_APP_GUEST_CITY!,
+		zipCode: process.env.REACT_APP_GUEST_ZIPCODE!,
+		phone: process.env.REACT_APP_GUEST_PHONE!,
+		email: process.env.REACT_APP_GUEST_ADMIN_EMAIL!,
+	},
+	paymentInfo: {
+		cardNumber: process.env.REACT_APP_GUEST_CARDNUMBER!,
+		cardHolderFirstName: process.env.REACT_APP_GUEST_CARDFIRSTNAME!,
+		cardHolderLastName: process.env.REACT_APP_GUEST_CARDLASTNAME!,
+		expiryDateMonth: process.env.REACT_APP_GUEST_CARDEXPMONTH!,
+		expiryDateYear: process.env.REACT_APP_GUEST_CARDEXPYEAR!,
+		securityCode: process.env.REACT_APP_GUEST_CARDCVV!,
+		phone: process.env.REACT_APP_GUEST_PHONE!,
+		subTotal: 0,
+	},
+	completedPaymentForm: true,
+	completedShippingForm: true,
+};
