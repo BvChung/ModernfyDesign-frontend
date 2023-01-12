@@ -4,11 +4,12 @@
 
 ## Overview
 
-ModernfyDesign is a modern e-commerce furniture store with simulated transactions, creating orders, and CRUD functionality with products implemented with an admin page.
+ModernfyDesign is a modern e-commerce furniture store with simulated transactions, creating orders, and CRUD functionality with products implemented through an admin page.
 
 ## Table of Contents
 
 - [Tech](#tech)<br/>
+- [Development](#development)<br/>
 
 ## Tech
 
