@@ -46,8 +46,8 @@ export default function ReviewOrder() {
 
 	useEffect(() => {
 		if (!myOrder.completedPaymentForm || !myOrder.completedShippingForm) {
-			navigate("/cart");
 			clearMyOrder();
+			navigate("/cart");
 		}
 	}, []);
 

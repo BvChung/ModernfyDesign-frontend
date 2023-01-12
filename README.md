@@ -1,46 +1,100 @@
-# Getting Started with Create React App
+# ModernfyDesign Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### [ModernfyDesign backend] (https://github.com/BvChung/MordernfyDesign-backend)
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+## Table of Contents
 
-### `npm start`
+- [Tech](#tech)<br/>
+- [Demos](#demo-gifs)<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Front-End
 
-### `npm test`
+- [React](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development
 
-### `npm run build`
+1. Install dependencies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm i
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Set up `.env`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# [development] for development
+# Change to [production] for deployment to connect to react frontend
+NODE_ENV = development
 
-### `npm run eject`
+# Port number can be changed to any value
+PORT = 3001
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Connect your mongoDB cluster using the url from your mongo account
+MONGO_URI = mongoDB_cluster_connection
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Any value can be provided in order to generate JWTs
+JWT_ACCESS_SECRET = value1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+JWT_REFRESH_SECRET = value2
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Connect your Cloudinary account configs
+CLOUDINARY_CLOUD_NAME = your_cloud_name
 
-## Learn More
+CLOUDINARY_API_KEY = your_cloud_key
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+CLOUDINARY_API_SECRET = your_cloud_secret
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Connection to the respective upload folders for image upload/deletion
+CLOUDINARY_AVATAR_UPLOAD = folder1
+
+CLOUDINARY_ICON_UPLOAD = folder2
+```
+
+3. Starting backend server with nodemon
+
+```
+npm run server
+```
+
+### Running frontend
+
+1. Install dependencies
+
+```
+cd frontend
+npm i
+```
+
+2. Set up `.env` **(.env will be in .gitignore)**
+
+```bash
+# PORT is your respective port value from the backend
+
+# Url for Axios and Socket.IO connection to backend
+REACT_APP_CHAT_API = http://localhost:PORT
+
+# Create demo guest account information in mongoDB (these values can be changed)
+REACT_APP_GUEST_EMAIL = guestaccount@gmail.com
+
+REACT_APP_GUEST_PASSWORD = guestaccount
+```
+
+3. In frontend in [api/axios.js](https://github.com/BvChung/groupcord/blob/main/frontend/src/api/axios.js) uncomment the BASE_URL to make a connection with axios and your backend.
+
+```bash
+const BASE_URL = process.env.REACT_APP_CHAT_API
+
+# In public and private axios
+baseURL: BASE_URL
+```
+
+4. Starting frontend
+
+```
+npm run start
+```
