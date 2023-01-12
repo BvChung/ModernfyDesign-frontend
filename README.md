@@ -1,13 +1,14 @@
 # ModernfyDesign Frontend
 
-### [ModernfyDesign backend] (https://github.com/BvChung/MordernfyDesign-backend)
+### [ModernfyDesign backend](https://github.com/BvChung/MordernfyDesign-backend)
 
 ## Overview
+
+ModernfyDesign is a modern e-commerce furniture store with simulated transactions, creating orders, and CRUD functionality with products implemented with an admin page.
 
 ## Table of Contents
 
 - [Tech](#tech)<br/>
-- [Demos](#demo-gifs)<br/>
 
 ## Tech
 
@@ -15,8 +16,11 @@
 
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [daisyUI](https://daisyui.com/)
 
 ## Development
+
+### Running frontend
 
 1. Install dependencies
 
@@ -27,73 +31,48 @@ npm i
 2. Set up `.env`
 
 ```bash
-# [development] for development
-# Change to [production] for deployment to connect to react frontend
-NODE_ENV = development
+# Respective port value to backend
+REACT_APP_API_URL = http://localhost:
 
-# Port number can be changed to any value
-PORT = 3001
+# Respective cloudinary account cloud name
+REACT_APP_CLOUDINARY_CLOUD_NAME =
 
-# Connect your mongoDB cluster using the url from your mongo account
-MONGO_URI = mongoDB_cluster_connection
+# Your image link to display on category and carousel on the landing page
+REACT_APP_CAROUSEL_IMAGE_1 =
+REACT_APP_CAROUSEL_IMAGE_2 =
+REACT_APP_CAROUSEL_IMAGE_3 =
+REACT_APP_CAROUSEL_IMAGE_4 =
+REACT_APP_CAROUSEL_IMAGE_5 =
+REACT_APP_CATEGORY_IMAGE_1 =
+REACT_APP_CATEGORY_IMAGE_2 =
+REACT_APP_CATEGORY_IMAGE_3 =
+REACT_APP_CATEGORY_IMAGE_4 =
+REACT_APP_CATEGORY_IMAGE_5 =
+REACT_APP_CATEGORY_IMAGE_6 =
 
-# Any value can be provided in order to generate JWTs
-JWT_ACCESS_SECRET = value1
+# Guest account and guest admin information
+REACT_APP_GUEST_EMAIL =
+REACT_APP_GUEST_PASSWORD =
+REACT_APP_GUEST_ADMIN_EMAIL =
+REACT_APP_GUEST_ADMIN_PASSWORD =
+REACT_APP_GUEST_ADDRESS =
+REACT_APP_GUEST_CITY=
+REACT_APP_GUEST_STATE =
+REACT_APP_GUEST_ZIPCODE =
+REACT_APP_GUEST_PHONE =
+REACT_APP_GUEST_CARDNUMBER =
+REACT_APP_GUEST_CARDFIRSTNAME =
+REACT_APP_GUEST_CARDLASTNAME =
+REACT_APP_GUEST_ADMIN_CARDLASTNAME =
+REACT_APP_GUEST_CARDEXPMONTH =
+REACT_APP_GUEST_CARDEXPYEAR =
+REACT_APP_GUEST_CARDCVV =
 
-JWT_REFRESH_SECRET = value2
-
-# Connect your Cloudinary account configs
-CLOUDINARY_CLOUD_NAME = your_cloud_name
-
-CLOUDINARY_API_KEY = your_cloud_key
-
-CLOUDINARY_API_SECRET = your_cloud_secret
-
-# Connection to the respective upload folders for image upload/deletion
-CLOUDINARY_AVATAR_UPLOAD = folder1
-
-CLOUDINARY_ICON_UPLOAD = folder2
+# Respective mongoDB admin account id
+REACT_APP_GUEST_ADMIN_ACCOUNT_ID =
 ```
 
-3. Starting backend server with nodemon
-
-```
-npm run server
-```
-
-### Running frontend
-
-1. Install dependencies
-
-```
-cd frontend
-npm i
-```
-
-2. Set up `.env` **(.env will be in .gitignore)**
-
-```bash
-# PORT is your respective port value from the backend
-
-# Url for Axios and Socket.IO connection to backend
-REACT_APP_CHAT_API = http://localhost:PORT
-
-# Create demo guest account information in mongoDB (these values can be changed)
-REACT_APP_GUEST_EMAIL = guestaccount@gmail.com
-
-REACT_APP_GUEST_PASSWORD = guestaccount
-```
-
-3. In frontend in [api/axios.js](https://github.com/BvChung/groupcord/blob/main/frontend/src/api/axios.js) uncomment the BASE_URL to make a connection with axios and your backend.
-
-```bash
-const BASE_URL = process.env.REACT_APP_CHAT_API
-
-# In public and private axios
-baseURL: BASE_URL
-```
-
-4. Starting frontend
+3. Starting frontend
 
 ```
 npm run start
