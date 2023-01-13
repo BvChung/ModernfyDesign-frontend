@@ -69,7 +69,7 @@ REACT_APP_GUEST_CARDEXPMONTH =
 REACT_APP_GUEST_CARDEXPYEAR =
 REACT_APP_GUEST_CARDCVV =
 
-# Respective mongoDB admin account id
+# Respective mongoDB created admin account id (_id: )
 REACT_APP_GUEST_ADMIN_ACCOUNT_ID =
 ```
 
