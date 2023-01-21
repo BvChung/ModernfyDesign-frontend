@@ -60,9 +60,9 @@ export default function OrderPage() {
 	return (
 		<>
 			{!isLoading ? (
-				<div className="flex flex-col items-center justify-center mt-8 mb-16 mx-4 sm:mx-6 lg:mx-0">
+				<div className="flex flex-col items-center justify-center mt-8 mb-20 mx-4 sm:mx-6 lg:mx-0">
 					<div className="flex items-center gap-2 w-full mb-6 lg:max-w-5xl xl:max-w-6xl">
-						<span className="font-medium text-xl sm:text-2xl">My Orders</span>
+						<span className="font-medium text-xl text-gray-800">My Orders</span>
 					</div>
 
 					<div className="flex justify-center h-max w-full gap-4 lg:max-w-5xl xl:max-w-6xl">

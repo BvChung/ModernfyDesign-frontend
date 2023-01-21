@@ -127,7 +127,7 @@ export default function OrderInfo() {
 							</div>
 						</div>
 
-						<div className="flex flex-1 flex-col md:flex-row justify-between w-full gap-4 lg:max-w-5xl xl:max-w-6xl border-[1px] px-4 py-6 mb-8 rounded-lg shadow-sm">
+						<div className="flex flex-1 flex-col md:flex-row justify-between w-full gap-4 lg:max-w-5xl xl:max-w-6xl border-[1px] p-6 mb-8 rounded-lg shadow-sm">
 							<div className="flex flex-col justify-end border-b-[1px] border-gray-600 pb-6 mb-2 md:pb-0 md:border-0 md:mb-0 md:basis-60">
 								<h3 className="font-semibold mb-2 pb-1 border-b-[1px]">
 									Billing Information

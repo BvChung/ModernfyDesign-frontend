@@ -86,7 +86,9 @@ export default function SignIn() {
 				className="flex flex-col justify-center items-center w-full px-4 md:p-8 md:w-[30rem] md:border-[1px] border-gray-300 md:rounded-lg md:shadow-sm"
 				onSubmit={handleSubmit}
 			>
-				<h1 className=" font-semibold text-lg md:text-xl mt-2 mb-4">Sign In</h1>
+				<h1 className="font-medium text-lg md:text-xl mt-2 mb-4">
+					Welcome Back!
+				</h1>
 
 				<div className="flex flex-col items-center w-full mb-4">
 					{loginInput.map((input) => {
@@ -114,7 +116,7 @@ export default function SignIn() {
 							<span className="label-text mr-2">Show password</span>
 							<input
 								type="checkbox"
-								className="checkbox checkbox-sm checkbox-secondary rounded-md border-2 border-gray-500"
+								className="checkbox checkbox-sm checkbox-secondary rounded-md border-2 border-gray-500 bg-slate-50"
 								onChange={() => {
 									setShowPassword((prev) => !prev);
 								}}
@@ -125,7 +127,8 @@ export default function SignIn() {
 
 				<div className="flex flex-col w-full justify-center items-start mb-6">
 					<button
-						className="btn btn-info h-11 rounded-full w-full mb-4"
+						className="btn bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2 
+						h-11 rounded-md shadow-md w-full mb-4"
 						aria-label="Sign in"
 					>
 						{isLoading && !loginCredentials.isGuestAccount ? (
@@ -142,7 +145,7 @@ export default function SignIn() {
 								password: process.env.REACT_APP_GUEST_PASSWORD!,
 							});
 						}}
-						className="btn btn-outline btn-secondary h-11 rounded-full w-full"
+						className="btn btn-outline btn-secondary h-11 rounded-md w-full"
 						aria-label="Sign in as guest"
 					>
 						{isLoading && loginCredentials.isGuestAccount ? (

@@ -19,7 +19,7 @@ export default function FilterModal({ handleChange, setFilter }: FilterFunc) {
 		<>
 			<label
 				htmlFor="filters-modal"
-				className="btn btn-sm bg-gray-200 hover:bg-gray-300 text-black border-0 rounded-full px-5 h-9"
+				className="btn btn-sm bg-gray-200 hover:bg-gray-300 text-black border-0 rounded-full shadow-sm px-5 h-9"
 				aria-label="Open filter modal"
 			>
 				<svg

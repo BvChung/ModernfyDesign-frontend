@@ -110,7 +110,7 @@ export default function ProductPage() {
 		);
 
 	return (
-		<div className="flex justify-center mt-8 mb-16 w-full min-w-full h-full">
+		<div className="flex justify-center mt-8 mb-20 w-full min-w-full h-full">
 			<div className="flex flex-col w-full min-h-screen lg:max-w-6xl xl:max-w-7xl mx-4 sm:mx-6 lg:mx-0">
 				<div className="flex gap-2 justify-start w-full lg:max-w-3xl xl:max-w-4xl mb-6">
 					<FiltersModal handleChange={handleChange} setFilter={setFilter} />

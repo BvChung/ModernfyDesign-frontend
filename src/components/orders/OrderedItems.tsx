@@ -81,11 +81,13 @@ export default function OrderedItems({
 									position: "bottom-right",
 								});
 							}}
-							className={`btn w-40 rounded-full ${
-								!findCartItem(_id)?.quantity || findCartItem(_id)?.quantity! < 9
-									? " btn-info"
-									: "btn-disabled"
-							} flex items-center h-11 gap-2`}
+							className={`btn bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2 h-11 w-36 rounded-md shadow-md
+							 ${
+									!findCartItem(_id)?.quantity ||
+									findCartItem(_id)?.quantity! < 9
+										? ""
+										: "btn-disabled"
+								}`}
 							aria-label="Add item to cart"
 						>
 							<span className="text-xs">
@@ -141,7 +143,7 @@ export default function OrderedItems({
 								position: "bottom-right",
 							});
 						}}
-						className={`btn rounded-full ${
+						className={`btn rounded-md ${
 							!findCartItem(_id)?.quantity || findCartItem(_id)?.quantity! < 9
 								? "btn-info"
 								: "btn-disabled"

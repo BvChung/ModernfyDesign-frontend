@@ -45,14 +45,24 @@ export default function CheckoutNav() {
 						✕
 					</label>
 
-					<h3 className="text-lg font-bold">Confirm cancellation</h3>
-					<p className="py-4">
+					<h3 className="text-lg font-bold text-gray-900">
+						Confirm cancellation
+					</h3>
+					<p className="py-4 text-gray-800">
 						You will have to start over again if you leave the checkout page.
 					</p>
-					<div className="modal-action justify-end gap-4">
+					<div className="modal-action items-center justify-end gap-4 mt-8">
 						<label
 							htmlFor="return-modal"
-							className="btn px-6 rounded-full btn-outline btn-accent h-11 normal-case"
+							className="btn btn-sm btn-secondary btn-outline h-11 px-4 text-sm rounded-md normal-case"
+							aria-label="Continue checking out"
+						>
+							Continue
+						</label>
+
+						<label
+							htmlFor="return-modal"
+							className="btn px-4 rounded-md bg-red-700 border-red-700 hover:bg-red-600 hover:border-red-600    h-11 w-26 normal-case"
 							onClick={() => {
 								navigate("/cart");
 								clearMyOrder();
@@ -60,20 +70,6 @@ export default function CheckoutNav() {
 							aria-label="Cancel order"
 						>
 							Cancel order
-						</label>
-						<label
-							htmlFor="return-modal"
-							className="btn btn-secondary hidden md:inline-flex h-11 sm:px-0 md:px-8 rounded-full normal-case"
-							aria-label="Continue checking out"
-						>
-							Continue checking out
-						</label>
-						<label
-							htmlFor="return-modal"
-							className="btn btn-secondary md:hidden px-8 h-11 sm:px-0 md:px-8 rounded-full normal-case"
-							aria-label="Continue checking out"
-						>
-							Continue
 						</label>
 					</div>
 				</label>

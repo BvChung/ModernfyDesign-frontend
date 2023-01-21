@@ -1,16 +1,10 @@
-export interface CarouselData {
-	slides: string[];
-}
-
-export const carouselData: CarouselData = {
-	slides: [
-		process.env.REACT_APP_CAROUSEL_IMAGE_1!,
-		process.env.REACT_APP_CAROUSEL_IMAGE_2!,
-		process.env.REACT_APP_CAROUSEL_IMAGE_3!,
-		process.env.REACT_APP_CAROUSEL_IMAGE_4!,
-		process.env.REACT_APP_CAROUSEL_IMAGE_5!,
-	],
-};
+export const carouselData: string[] = [
+	process.env.REACT_APP_CAROUSEL_IMAGE_1!,
+	process.env.REACT_APP_CAROUSEL_IMAGE_2!,
+	process.env.REACT_APP_CAROUSEL_IMAGE_3!,
+	process.env.REACT_APP_CAROUSEL_IMAGE_4!,
+	process.env.REACT_APP_CAROUSEL_IMAGE_5!,
+];
 
 export const categoryData = [
 	{

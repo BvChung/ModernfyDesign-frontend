@@ -33,104 +33,109 @@ export default function ProductInfo() {
 			<AdvancedImage
 				cldImg={cldConfig.image(imgSrc).format("auto").quality("auto")}
 				plugins={[lazyload(), responsive(), placeholder({ mode: "blur" })]}
-				className="h-[300px] w-full sm:w-[500px] md:w-[700px] md:h-[500px] xl:w-[800px] object-fill"
+				className="h-[300px] rounded-sm w-full sm:w-[500px] md:w-[700px] md:h-[500px] xl:w-[800px] object-fill"
 				alt="Product"
 			/>
 		);
 	}
 
 	return (
-		<div className="flex flex-col items-center justify-center my-8 md:my-10 mx-2">
+		<div className="flex flex-col items-center justify-center my-8 md:mt-10 md:mb-20 mx-2">
 			{isSuccess && (
 				<div className="flex flex-col items-center justify-center w-full lg:max-w-5xl xl:max-w-6xl">
-					<div className="flex flex-col-reverse md:flex-row w-full gap-8 md:gap-20 md:justify-between mb-8 md:mb-10">
-						<div className="flex justify-center">{productImage}</div>
-						<div className="flex flex-col w-full md:w-80 h-fit p-4 border-[1px] rounded-lg shadow-sm">
-							<p className="font-semibold text-xl mb-2">{productInfo.name}</p>
-							<p className="font-semibold text-lg text-gray-900 mb-4">
-								${productInfo.price.toFixed(2)}
-							</p>
+					<div className="flex flex-col-reverse md:flex-row w-full gap-8 md:gap-20 md:justify-between mb-8 md:mb-12">
+						<figure className="flex justify-center">{productImage}</figure>
 
-							<div className="md:border-b-[1px] pb-0 md:pb-4 mb-0 md:mb-4">
-								{!foundItem ? (
-									<button
-										onClick={() => {
-											if (!productInfo) return;
+						<div className="flex flex-col w-full md:w-[21rem] h-fit py-6 border-[1px] rounded-lg shadow-sm">
+							<div className="px-6">
+								<p className="font-semibold text-xl mb-2 text-gray-900">
+									{productInfo.name}
+								</p>
+								<p className="font-semibold text-lg text-gray-800 mb-4">
+									${productInfo.price.toFixed(2)}
+								</p>
 
-											addCartItem({
-												_id: productInfo._id,
-												price: productInfo.price,
-												quantity: 1,
-											});
-
-											toast.success(
-												`${productInfo.name} has been added to your cart.`,
-												{ position: "bottom-right" }
-											);
-										}}
-										className="btn btn-primary h-11 w-full px-6 rounded-full"
-										aria-label="Add to cart"
-									>
-										Add to cart
-									</button>
-								) : (
-									<div className="w-full flex flex-1 ">
+								<div className="mb-0 md:mb-4">
+									{!foundItem ? (
 										<button
-											className={`flex grow max-w-[70px]  btn btn-secondary h-11 rounded-l-full ${
-												foundItem?.quantity === 0 && "btn-disabled"
-											} `}
 											onClick={() => {
-												decrementCartQuantity(productInfo._id);
+												if (!productInfo) return;
+
+												addCartItem({
+													_id: productInfo._id,
+													price: productInfo.price,
+													quantity: 1,
+												});
+
+												toast.success(
+													`${productInfo.name} has been added to your cart.`,
+													{ position: "bottom-right" }
+												);
 											}}
-											aria-label="Decrement item quantity"
+											className="btn btn-primary shadow-md h-11 w-full px-6 rounded-md"
+											aria-label="Add to cart"
 										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 20 20"
-												strokeWidth={2}
-												fill="currentColor"
-												className="w-6 h-6"
-											>
-												<path
-													fillRule="evenodd"
-													d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
-													clipRule="evenodd"
-												/>
-											</svg>
+											Add to cart
 										</button>
-										<div className="flex grow  btn btn-primary rounded-none h-11">
-											{foundItem.quantity !== 9
-												? `${foundItem?.quantity} Added`
-												: `Max ${foundItem?.quantity}`}
+									) : (
+										<div className="w-full flex flex-1 ">
+											<button
+												className={`flex grow max-w-[70px] btn btn-secondary h-11 rounded-none rounded-l-md ${
+													foundItem?.quantity === 0 && "btn-disabled"
+												} `}
+												onClick={() => {
+													decrementCartQuantity(productInfo._id);
+												}}
+												aria-label="Decrement item quantity"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													strokeWidth={2}
+													fill="currentColor"
+													className="w-6 h-6"
+												>
+													<path
+														fillRule="evenodd"
+														d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+														clipRule="evenodd"
+													/>
+												</svg>
+											</button>
+											<div className="flex grow btn rounded-none btn-primary h-11">
+												{foundItem.quantity !== 9
+													? `${foundItem?.quantity} Added`
+													: `Max ${foundItem?.quantity}`}
+											</div>
+											<button
+												onClick={() => {
+													incrementCartQuantity(productInfo._id);
+												}}
+												className={`flex grow max-w-[70px] btn btn-secondary h-11 rounded-none rounded-r-md ${
+													foundItem?.quantity === 9 && "btn-disabled"
+												} `}
+												aria-label="Increment item quantity"
+											>
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													viewBox="0 0 20 20"
+													strokeWidth={2}
+													fill="currentColor"
+													className="w-6 h-6"
+												>
+													<path
+														fillRule="evenodd"
+														d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+														clipRule="evenodd"
+													/>
+												</svg>
+											</button>
 										</div>
-										<button
-											onClick={() => {
-												incrementCartQuantity(productInfo._id);
-											}}
-											className={`flex grow max-w-[70px] btn btn-secondary h-11 rounded-r-full ${
-												foundItem?.quantity === 9 && "btn-disabled"
-											} `}
-											aria-label="Increment item quantity"
-										>
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 20 20"
-												strokeWidth={2}
-												fill="currentColor"
-												className="w-6 h-6"
-											>
-												<path
-													fillRule="evenodd"
-													d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-													clipRule="evenodd"
-												/>
-											</svg>
-										</button>
-									</div>
-								)}
+									)}
+								</div>
 							</div>
 
-							<div className="hidden md:flex md:flex-col gap-5">
+							<div className="hidden md:flex md:flex-col md:border-t-[1px] pt-0 md:pt-4 px-6 gap-5 bg-gray-50 w-full">
 								<div className="flex items-center gap-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +157,9 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<p className="text-sm">{productInfo.category}</p>
+									<p className="text-sm text-gray-900">
+										{productInfo.category}
+									</p>
 								</div>
 
 								<div className="flex gap-2">
@@ -171,7 +178,9 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<span className="text-sm">{productInfo.color}</span>
+									<span className="text-sm text-gray-900">
+										{productInfo.color}
+									</span>
 								</div>
 
 								<div className="flex items-center gap-2">
@@ -190,7 +199,7 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<p className="text-sm">
+									<p className="text-sm text-gray-900">
 										Pickup, <b>tomorrow</b> at Modernfy
 									</p>
 								</div>
@@ -211,7 +220,7 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<p className="text-sm">Free shipping</p>
+									<p className="text-sm text-gray-900">Free shipping</p>
 								</div>
 
 								<div className="flex gap-2">
@@ -230,7 +239,7 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<p className="text-sm">Add to list</p>
+									<p className="text-sm text-gray-900">Add to list</p>
 								</div>
 
 								<div className="flex gap-2">
@@ -249,7 +258,7 @@ export default function ProductInfo() {
 										/>
 									</svg>
 
-									<p className="text-sm">Add to registry</p>
+									<p className="text-sm text-gray-900">Add to registry</p>
 								</div>
 							</div>
 						</div>
@@ -378,9 +387,11 @@ export default function ProductInfo() {
 						</div>
 					</div>
 
-					<div className="w-full border-y-[1px] lg:max-w-5xl xl:max-w-7xl p-4">
-						<h1 className="font-semibold text-xl mb-4">About the Product</h1>
-						<p>{productInfo.description}</p>
+					<div className="w-full border-y-[1px] lg:max-w-5xl xl:max-w-7xl p-6">
+						<h1 className="font-semibold text-xl mb-4 text-gray-900">
+							About the Product
+						</h1>
+						<p className="text-gray-800">{productInfo.description}</p>
 					</div>
 				</div>
 			)}

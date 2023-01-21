@@ -13,7 +13,7 @@ export default function OrderHistory({
 
 	return (
 		<div className="flex flex-col items-center w-full h-fit border-b-[1px] last:border-b-0 ">
-			<div className="flex flex-col md:flex-row flex-1 justify-between w-full pt-4 px-4 pb-4 md:pb-6 border-b-[1px] bg-gray-100 first:rounded-t-lg">
+			<div className="flex flex-col md:flex-row flex-1 justify-between w-full py-6 px-6 border-b-[1px] bg-gray-100 first:rounded-t-lg">
 				<div className="hidden items-center w-full mb-4 md:mb-0 md:flex">
 					<div className="flex flex-col items-center md:items-baseline justify-center gap-[2px] basis-60">
 						<span className="uppercase font-medium text-sm text-gray-900">

@@ -25,7 +25,7 @@ export default function Category({ imgPubId, title }: CategoryProps) {
 				<AdvancedImage
 					cldImg={productImg}
 					plugins={[lazyload(), responsive(), placeholder({ mode: "blur" })]}
-					className="h-[250px] w-full object-cover hover:scale-105 transition-transform duration-500"
+					className="h-[250px] rounded-sm w-full object-cover hover:scale-105 transition-transform duration-500"
 					alt="Product Category"
 				/>
 				<div className="absolute bottom-4 left-6">

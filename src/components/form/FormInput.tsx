@@ -13,7 +13,6 @@ export default function FormInput({
 	errorMessage,
 	inputMode,
 	maxLength,
-	htmlInputSize,
 	width,
 }: FormInputProps) {
 	const [inputFocused, setInputFocused] = useState(false);
@@ -26,7 +25,7 @@ export default function FormInput({
 		"invalid:input-error invalid:focus:outline-none";
 
 	return (
-		<div className="form-control w-full">
+		<div className="form-control w-full mb-1 ">
 			<label className="label">
 				<span className="label-text">{label}</span>
 			</label>
@@ -37,7 +36,7 @@ export default function FormInput({
 				value={value}
 				onChange={onChange}
 				inputMode={inputMode}
-				className={`peer input ${displayErrorInput} input-md ${width} input-bordered `}
+				className={`peer input placeholder:text-blue-500 ${displayErrorInput} input-md ${width} input-bordered bg-slate-50 rounded-md`}
 				pattern={pattern}
 				required={required}
 				maxLength={maxLength}

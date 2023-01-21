@@ -1,23 +1,18 @@
 import { useState, useEffect, useRef, useId } from "react";
 import { Link } from "react-router-dom";
-import { CarouselData } from "../../../config/images";
 import Indicator from "./Indicator";
 import { AdvancedImage } from "@cloudinary/react";
 import { cldConfig } from "../../../config/cloudinaryConfig";
 
-export default function Carou({ slides }: CarouselData) {
+type CarouselProps = {
+	title: string;
+	subTitle: string;
+	slides: string[];
+};
+
+export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 	const [currentIndex, setCurrentIndex] = useState<number>(0);
-	const intervalRef = useRef<ReturnType<typeof setInterval> | undefined>(
-		undefined
-	);
-
-	function startTimer() {
-		const id = setInterval(() => {
-			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-		}, 10000);
-
-		intervalRef.current = id;
-	}
+	const intervalRef = useRef<ReturnType<typeof setInterval>>();
 
 	useEffect(() => {
 		startTimer();
@@ -25,25 +20,47 @@ export default function Carou({ slides }: CarouselData) {
 		return () => stopTimer();
 	}, []);
 
+	function startTimer() {
+		let id = setInterval(() => {
+			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+		}, 10000);
+
+		intervalRef.current = id;
+	}
+
 	function toNextSlide() {
 		setCurrentIndex((prev) =>
 			currentIndex === slides.length - 1 ? 0 : prev + 1
 		);
+
+		clearInterval(intervalRef.current);
+		// console.log(intervalRef.current);
+		startTimer();
+		// console.log(intervalRef.current);
 	}
 
 	function toPrevSlide() {
 		setCurrentIndex((prev) =>
 			currentIndex === 0 ? slides.length - 1 : prev - 1
 		);
+
+		clearInterval(intervalRef.current);
+		startTimer();
 	}
 
 	function stopTimer() {
 		clearInterval(intervalRef.current);
+		console.log(intervalRef.current);
 	}
 
 	return (
 		<div className="flex relative w-full">
 			<div className="overflow-hidden w-full">
+				<div
+					onMouseOver={stopTimer}
+					onMouseLeave={startTimer}
+					className="absolute block w-full bg-gray-900 h-[34rem] z-[5] bg-opacity-[.13]"
+				></div>
 				<div className="flex w-full">
 					{slides.map((img, index) => {
 						const productImg = cldConfig
@@ -52,41 +69,32 @@ export default function Carou({ slides }: CarouselData) {
 							.quality("auto");
 
 						return (
-							<div key={index} className="relative min-w-full">
-								<div
-									onMouseOver={stopTimer}
-									onMouseLeave={startTimer}
-									className="relative w-full
-                             h-[34rem]"
-								>
-									<AdvancedImage
-										cldImg={productImg}
-										className="absolute block w-full object-cover h-[34rem] ease-out duration-1000"
-										style={{ transform: `translateX(${-currentIndex * 100}%)` }}
-										alt="Carousel"
-									/>
-								</div>
+							<div key={index} className="relative min-w-full h-[34rem]">
+								<AdvancedImage
+									cldImg={productImg}
+									className="absolute block w-full object-cover h-[34rem] ease-out duration-1000"
+									style={{ transform: `translateX(${-currentIndex * 100}%)` }}
+									alt="Carousel"
+								/>
 							</div>
 						);
 					})}
 				</div>
 			</div>
 
-			<div className="absolute left-6 top-14 md:left-16 w-fit">
-				<h2 className="text-2xl font-semibold text-white mb-2">
-					The Modern Collection
-				</h2>
-				<p className="font-normal text-white mb-6">Simple and Elegant</p>
+			<div className="absolute left-6 top-14 md:left-16 w-fit z-20">
+				<h2 className="text-3xl font-bold text-white mb-2 ">{title}</h2>
+				<p className="font-medium text-lg text-white mb-6">{subTitle}</p>
 				<Link
 					to={"/products"}
-					className="btn border-white hover:border-gray-200 hover:bg-gray-200 bg-white text-black"
+					className="btn btn-md rounded-sm h-13 px-6 border-white hover:border-gray-200 hover:bg-gray-200 bg-white text-black shadow-md"
 					aria-label="Move to products page"
 				>
-					Shop now
+					<span className="font-semibold text-gray-900">Shop now</span>
 				</Link>
 			</div>
 
-			<div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+			<div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-20">
 				<button
 					onMouseOver={stopTimer}
 					onMouseLeave={startTimer}
@@ -136,7 +144,7 @@ export default function Carou({ slides }: CarouselData) {
 			<div
 				onMouseOver={stopTimer}
 				onMouseLeave={startTimer}
-				className="absolute w-[240px] bg-gray-500 bg-opacity-30 p-2 rounded-full shadow-sm flex items-center justify-center gap-4 -translate-y-1/2 left-1/2 ml-[-120px] bottom-0"
+				className="absolute w-[240px] bg-gray-500 bg-opacity-30 p-2 rounded-full shadow-sm flex items-center justify-center gap-4 -translate-y-1/2 left-1/2 ml-[-120px] bottom-0 z-20"
 			>
 				<Indicator
 					key={useId()}

@@ -145,7 +145,7 @@ export default function Register() {
 				onSubmit={handleSubmit}
 				className="flex flex-col justify-center items-center w-full px-4 md:p-8 md:w-[30rem] md:border-[1px] border-gray-300 md:rounded-lg md:shadow-sm"
 			>
-				<h1 className="font-semibold text-lg md:text-xl mt-2 mb-4">
+				<h1 className="font-medium text-lg md:text-xl mt-2 mb-4">
 					Create Your Account
 				</h1>
 				<div className="grid grid-cols-1 md:grid-cols-2 w-full  md:gap-4">
@@ -207,7 +207,8 @@ export default function Register() {
 
 				<div className="flex flex-col w-full justify-center items-start mb-6">
 					<button
-						className="btn btn-info h-11 rounded-full w-full"
+						className="btn bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2 
+						h-11 rounded-md shadow-md w-full"
 						aria-label="Sign in"
 					>
 						{isLoading ? <SpinnerSm color="text-white" /> : "Register"}

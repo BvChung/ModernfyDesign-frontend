@@ -17,7 +17,7 @@ export default function DisplayProduct({
 		.quality("auto")
 		.resize(scale().width(600).height(600));
 	return (
-		<div className="w-full min-w-full fade transition-all">
+		<div className="w-full min-w-full fade rounded-md transition-all shadow-md">
 			<Link
 				to={_id}
 				className="card w-full rounded-md h-fit bg-base-100 border-[1px] shadow-sm"
@@ -25,17 +25,19 @@ export default function DisplayProduct({
 				<div className="overflow-hidden">
 					<AdvancedImage
 						cldImg={productImg}
-						className="h-[200px] w-full relative object-cover hover:scale-105 transition-transform duration-500"
+						className="h-[200px] w-full rounded-t-md relative object-cover hover:scale-105 transition-transform duration-500"
 						alt="Product"
 					/>
 				</div>
 
-				<div className="card-body p-5">
-					<div className="card-actions">
-						<div className="badge badge-sm badge-outline">{category}</div>
+				<div className="card-body gap-0 p-6 hover:bg-gray-50">
+					<div className="card-actions mb-3">
+						<div className="badge badge-md rounded-full bg-sky-100 text-sky-800 font-bold border-sky-800 border-opacity-30">
+							{category}
+						</div>
 					</div>
-					<h2 className="font-semibold">{name}</h2>
-					<span className="font-semibold text-gray-900">
+					<h2 className="font-semibold mb-2 text-gray-900">{name}</h2>
+					<span className="font-semibold text-gray-800 text-lg">
 						${price.toFixed(2)}
 					</span>
 				</div>
