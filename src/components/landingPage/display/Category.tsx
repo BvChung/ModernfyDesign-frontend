@@ -6,11 +6,7 @@ import {
 	placeholder,
 	responsive,
 } from "@cloudinary/react";
-
-interface CategoryProps {
-	imgPubId: string;
-	title: string;
-}
+import { CategoryProps } from "../../../types/landingPageTypes";
 
 export default function Category({ imgPubId, title }: CategoryProps) {
 	const productImg = cldConfig.image(imgPubId).format("auto").quality("auto");

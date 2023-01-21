@@ -1,4 +1,4 @@
-import { OrderInfo } from "../../interfaces/orderInterface";
+import { OrderInfo } from "../../types/orderTypes";
 import { Link } from "react-router-dom";
 import OrderedItems from "./OrderedItems";
 

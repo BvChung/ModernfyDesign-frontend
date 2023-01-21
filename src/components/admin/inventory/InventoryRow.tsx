@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductInfo } from "../../../interfaces/productInterface";
+import { ProductInfo } from "../../../types/productTypes";
 import { cldConfig } from "../../../config/cloudinaryConfig";
 import { AdvancedImage, lazyload } from "@cloudinary/react";
 import { thumbnail } from "@cloudinary/url-gen/actions/resize";

@@ -1,7 +1,7 @@
 import { eCommerceApiPublic } from "../../api/axios";
-import { ProductInfo } from "../../interfaces/productInterface";
+import { ProductInfo } from "../../types/productTypes";
 import { useQuery } from "react-query";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useSearchProducts = () => {

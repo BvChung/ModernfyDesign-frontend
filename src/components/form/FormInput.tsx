@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FormInputProps } from "../../interfaces/formInterface";
+import { FormInputProps } from "../../types/formTypes";
 
 export default function FormInput({
 	id,

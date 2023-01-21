@@ -1,18 +1,19 @@
-import { useState, useEffect, useRef, useId } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Indicator from "./Indicator";
+import CarouselIndicator from "./CarouselIndicator";
 import { AdvancedImage } from "@cloudinary/react";
 import { cldConfig } from "../../../config/cloudinaryConfig";
+import { useInterval } from "../../../hooks/interval/useInterval";
+import { CarouselProps } from "../../../types/landingPageTypes";
 
-type CarouselProps = {
-	title: string;
-	subTitle: string;
-	slides: string[];
-};
-
-export default function Carousel({ title, subTitle, slides }: CarouselProps) {
-	const [currentIndex, setCurrentIndex] = useState<number>(0);
-	const intervalRef = useRef<ReturnType<typeof setInterval>>();
+export default function Carousel({
+	title,
+	subTitle,
+	slides,
+	delay,
+}: CarouselProps) {
+	const [currentSlide, setCurrentSlide] = useState<number>(0);
+	const [isRunning, setIsRunning] = useState<boolean>(false);
 
 	useEffect(() => {
 		startTimer();
@@ -20,37 +21,41 @@ export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 		return () => stopTimer();
 	}, []);
 
-	function startTimer() {
-		let id = setInterval(() => {
-			setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-		}, 10000);
+	useInterval(
+		() => {
+			setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+		},
+		isRunning ? delay : null
+	);
 
-		intervalRef.current = id;
+	function startTimer() {
+		setIsRunning(true);
 	}
 
 	function toNextSlide() {
-		setCurrentIndex((prev) =>
-			currentIndex === slides.length - 1 ? 0 : prev + 1
+		stopTimer();
+		setCurrentSlide((prev) =>
+			currentSlide === slides.length - 1 ? 0 : prev + 1
 		);
-
-		clearInterval(intervalRef.current);
-		// console.log(intervalRef.current);
 		startTimer();
-		// console.log(intervalRef.current);
 	}
 
 	function toPrevSlide() {
-		setCurrentIndex((prev) =>
-			currentIndex === 0 ? slides.length - 1 : prev - 1
+		stopTimer();
+		setCurrentSlide((prev) =>
+			currentSlide === 0 ? slides.length - 1 : prev - 1
 		);
-
-		clearInterval(intervalRef.current);
 		startTimer();
 	}
 
 	function stopTimer() {
-		clearInterval(intervalRef.current);
-		console.log(intervalRef.current);
+		setIsRunning(false);
+	}
+
+	function toSpecificSlide(slide: number) {
+		stopTimer();
+		setCurrentSlide(slide);
+		startTimer();
 	}
 
 	return (
@@ -73,7 +78,7 @@ export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 								<AdvancedImage
 									cldImg={productImg}
 									className="absolute block w-full object-cover h-[34rem] ease-out duration-1000"
-									style={{ transform: `translateX(${-currentIndex * 100}%)` }}
+									style={{ transform: `translateX(${-currentSlide * 100}%)` }}
 									alt="Carousel"
 								/>
 							</div>
@@ -94,10 +99,12 @@ export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 				</Link>
 			</div>
 
-			<div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-20">
+			<div
+				onMouseOver={stopTimer}
+				onMouseLeave={startTimer}
+				className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-20"
+			>
 				<button
-					onMouseOver={stopTimer}
-					onMouseLeave={startTimer}
 					onClick={toPrevSlide}
 					className="btn h-14 w-14 flex items-center justify-center bg-opacity-0 btn-circle border-none hover:bg-opacity-70 hover:bg-gray-900"
 					aria-label="Move to previous carousel image"
@@ -118,8 +125,6 @@ export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 					</svg>
 				</button>
 				<button
-					onMouseOver={stopTimer}
-					onMouseLeave={startTimer}
 					onClick={toNextSlide}
 					className="btn h-14 w-14 flex items-center justify-center bg-opacity-0 btn-circle border-none hover:bg-opacity-70 hover:bg-gray-900"
 					aria-label="Move to next carousel image"
@@ -146,36 +151,16 @@ export default function Carousel({ title, subTitle, slides }: CarouselProps) {
 				onMouseLeave={startTimer}
 				className="absolute w-[240px] bg-gray-500 bg-opacity-30 p-2 rounded-full shadow-sm flex items-center justify-center gap-4 -translate-y-1/2 left-1/2 ml-[-120px] bottom-0 z-20"
 			>
-				<Indicator
-					key={useId()}
-					currentIndex={currentIndex}
-					toIndex={0}
-					setCurrentIndex={setCurrentIndex}
-				/>
-				<Indicator
-					key={useId()}
-					currentIndex={currentIndex}
-					toIndex={1}
-					setCurrentIndex={setCurrentIndex}
-				/>
-				<Indicator
-					key={useId()}
-					currentIndex={currentIndex}
-					toIndex={2}
-					setCurrentIndex={setCurrentIndex}
-				/>
-				<Indicator
-					key={useId()}
-					currentIndex={currentIndex}
-					toIndex={3}
-					setCurrentIndex={setCurrentIndex}
-				/>
-				<Indicator
-					key={useId()}
-					currentIndex={currentIndex}
-					toIndex={4}
-					setCurrentIndex={setCurrentIndex}
-				/>
+				{slides.map((_, i: number) => {
+					return (
+						<CarouselIndicator
+							key={i}
+							currentSlide={currentSlide}
+							toSlide={i}
+							toSpecificSlide={toSpecificSlide}
+						/>
+					);
+				})}
 			</div>
 		</div>
 	);

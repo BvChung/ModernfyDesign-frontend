@@ -1,7 +1,7 @@
 import { eCommerceApiPublic } from "../../api/axios";
 import { useQuery } from "react-query";
-import { ProductInfo } from "../../interfaces/productInterface";
-import { CartStorageData, CartItemInfo } from "../../interfaces/cartInterface";
+import { ProductInfo } from "../../types/productTypes";
+import { CartStorageData, CartItemInfo } from "../../types/cartTypes";
 import qs from "qs";
 
 export const useGetCartItems = (myCartItems: CartStorageData[]) => {

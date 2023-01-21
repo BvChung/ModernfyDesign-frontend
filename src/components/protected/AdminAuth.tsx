@@ -1,9 +1,9 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuthContext } from "../../hooks/context/useAuthContext";
 
-interface ProtectedRoutesProps {
+type ProtectedRoutesProps = {
 	authRoles: Array<number>;
-}
+};
 
 export default function AdminAuth({ authRoles }: ProtectedRoutesProps) {
 	const { user } = useAuthContext();

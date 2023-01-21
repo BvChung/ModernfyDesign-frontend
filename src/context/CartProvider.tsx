@@ -4,9 +4,9 @@ import {
 	CartCheckoutInfo,
 	CartItemPrice,
 	CartItemQuantity,
-} from "../interfaces/cartInterface";
+} from "../types/cartTypes";
 
-interface CartContextInterface {
+type CartContextTypes = {
 	myCart: CartStorageData[];
 	setMyCart: React.Dispatch<React.SetStateAction<CartStorageData[]>>;
 	cartItemsInfo: CartCheckoutInfo;
@@ -19,13 +19,13 @@ interface CartContextInterface {
 	updateCartQuantity(updatedItem: CartItemQuantity): void;
 	updateCartPrice(updatedItem: CartItemPrice): void;
 	clearMyCart(): void;
-}
+};
 
-interface AuthProviderProps {
+type AuthProviderProps = {
 	children: React.ReactNode;
-}
+};
 
-const CartContext = createContext({} as CartContextInterface);
+const CartContext = createContext({} as CartContextTypes);
 
 export const CartProvider = ({ children }: AuthProviderProps) => {
 	const [myCart, setMyCart] = useState<CartStorageData[]>(

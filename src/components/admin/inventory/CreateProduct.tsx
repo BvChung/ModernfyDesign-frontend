@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useCreateProduct } from "../../../hooks/admin/inventory/useCreateProduct";
-import { ProductForm } from "../../../interfaces/productInterface";
+import { ProductForm } from "../../../types/productTypes";
 import { useAuthContext } from "../../../hooks/context/useAuthContext";
 
 export default function CreateProduct() {

@@ -1,4 +1,4 @@
-import { ModifyAccount } from "../../../interfaces/adminInterface";
+import { ModifyAccount } from "../../../types/adminTypes";
 //@ts-ignore
 import DefaultAvatar from "../../../assets/avatar.avif";
 import { accessRoles } from "../../../config/accessRoles";

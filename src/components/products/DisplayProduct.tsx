@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductInfo } from "../../interfaces/productInterface";
+import { ProductInfo } from "../../types/productTypes";
 import { cldConfig } from "../../config/cloudinaryConfig";
 import { scale } from "@cloudinary/transformation-builder-sdk/actions/resize";
 import { AdvancedImage } from "@cloudinary/react";

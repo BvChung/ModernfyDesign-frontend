@@ -1,9 +1,9 @@
 import React, { useState, useId, useEffect } from "react";
 import { useNavigate, Link, useLocation } from "react-router-dom";
-import { LoginCredentials } from "../../interfaces/authInterface";
+import { LoginCredentials } from "../../types/authTypes";
 import { useSignInUser } from "../../hooks/auth/useSignInUser";
-import { CustomLocationState } from "../../interfaces/customInterface";
-import { FormInputProps } from "../../interfaces/formInterface";
+import { CustomLocationState } from "../../types/customTypes";
+import { FormInputProps } from "../../types/formTypes";
 import FormInput from "../form/FormInput";
 import SpinnerSm from "../loading/SpinnerSm";
 
@@ -86,7 +86,7 @@ export default function SignIn() {
 				className="flex flex-col justify-center items-center w-full px-4 md:p-8 md:w-[30rem] md:border-[1px] border-gray-300 md:rounded-lg md:shadow-sm"
 				onSubmit={handleSubmit}
 			>
-				<h1 className="font-medium text-lg md:text-xl mt-2 mb-4">
+				<h1 className="font-semibold text-lg md:text-xl mt-2 mb-4">
 					Welcome Back!
 				</h1>
 

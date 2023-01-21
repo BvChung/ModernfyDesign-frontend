@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { OrderPurchasedItems } from "../../interfaces/orderInterface";
+import { OrderPurchasedItems } from "../../types/orderTypes";
 import { useCartContext } from "../../hooks/context/useCartContext";
 import { cldConfig } from "../../config/cloudinaryConfig";
 import { AdvancedImage } from "@cloudinary/react";

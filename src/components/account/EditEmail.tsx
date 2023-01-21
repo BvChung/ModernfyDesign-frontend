@@ -1,8 +1,8 @@
 import React, { useState, useId, useEffect } from "react";
 import { useAuthContext } from "../../hooks/context/useAuthContext";
 import FormInput from "../form/FormInput";
-import { FormInputProps } from "../../interfaces/formInterface";
-import { EditedEmail } from "../../interfaces/authInterface";
+import { FormInputProps } from "../../types/formTypes";
+import { EditedEmail } from "../../types/authTypes";
 import { useEditEmail } from "../../hooks/account/useEditEmail";
 import { useNavigate } from "react-router-dom";
 

@@ -1,9 +1,9 @@
 import React, { useState, useId, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { RegisterCredentials } from "../../interfaces/authInterface";
+import { RegisterCredentials } from "../../types/authTypes";
 import { useRegisterUser } from "../../hooks/auth/useRegisterUser";
-import { FormInputProps } from "../../interfaces/formInterface";
-import { CustomLocationState } from "../../interfaces/customInterface";
+import { FormInputProps } from "../../types/formTypes";
+import { CustomLocationState } from "../../types/customTypes";
 import FormInput from "../form/FormInput";
 import { toast } from "react-toastify";
 import SpinnerSm from "../loading/SpinnerSm";
@@ -145,7 +145,7 @@ export default function Register() {
 				onSubmit={handleSubmit}
 				className="flex flex-col justify-center items-center w-full px-4 md:p-8 md:w-[30rem] md:border-[1px] border-gray-300 md:rounded-lg md:shadow-sm"
 			>
-				<h1 className="font-medium text-lg md:text-xl mt-2 mb-4">
+				<h1 className="font-semibold text-lg md:text-xl mt-2 mb-4">
 					Create Your Account
 				</h1>
 				<div className="grid grid-cols-1 md:grid-cols-2 w-full  md:gap-4">

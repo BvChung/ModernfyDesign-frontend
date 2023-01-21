@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { useGetInventoryItem } from "../../../hooks/admin/inventory/useGetInventoryItem";
 import { useUpdateProduct } from "../../../hooks/admin/inventory/useUpdateProduct";
 import { useDeleteProduct } from "../../../hooks/admin/inventory/useDeleteProduct";
-import { ProductForm } from "../../../interfaces/productInterface";
+import { ProductForm } from "../../../types/productTypes";
 import Spinner from "../../loading/Spinner";
 import { useAuthContext } from "../../../hooks/context/useAuthContext";
 

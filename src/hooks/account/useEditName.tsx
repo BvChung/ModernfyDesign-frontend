@@ -1,9 +1,9 @@
 import { useMutation } from "react-query";
-import { EditedName } from "../../interfaces/authInterface";
+import { EditedName } from "../../types/authTypes";
 import { useAuthContext } from "../context/useAuthContext";
 import { usePrivateApi } from "../auth/usePrivateApi";
 import { useNavigate, useLocation } from "react-router-dom";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useEditName = () => {

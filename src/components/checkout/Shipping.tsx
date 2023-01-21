@@ -4,7 +4,7 @@ import { useOrderContext } from "../../hooks/context/useOrderContext";
 import { useCartContext } from "../../hooks/context/useCartContext";
 import { useAuthContext } from "../../hooks/context/useAuthContext";
 import FormInput from "../form/FormInput";
-import { FormInputProps } from "../../interfaces/formInterface";
+import { FormInputProps } from "../../types/formTypes";
 import DetailsModal from "./modal/DetailsModal";
 import StateOptions from "./StateOptions";
 

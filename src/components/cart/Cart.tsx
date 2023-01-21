@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useCartContext } from "../../hooks/context/useCartContext";
-import { CartItemInfo } from "../../interfaces/cartInterface";
+import { CartItemInfo } from "../../types/cartTypes";
 import { useGetCartItems } from "../../hooks/cart/useGetCartItems";
 import CartItem from "./CartItem";
 import { useOrderContext } from "../../hooks/context/useOrderContext";

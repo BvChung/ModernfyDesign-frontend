@@ -1,10 +1,10 @@
 import { usePrivateApi } from "../../auth/usePrivateApi";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate, useLocation } from "react-router-dom";
-import { UserInfo } from "../../../interfaces/authInterface";
-import { CustomError } from "../../../interfaces/customInterface";
+import { UserInfo } from "../../../types/authTypes";
+import { CustomError } from "../../../types/customTypes";
 import { toast } from "react-toastify";
-import { UpdateManagement } from "../../../interfaces/adminInterface";
+import { UpdateManagement } from "../../../types/adminTypes";
 
 export const useUpdateRole = () => {
 	const eCommerceApiPrivate = usePrivateApi();

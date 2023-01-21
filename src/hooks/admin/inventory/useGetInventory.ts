@@ -1,8 +1,8 @@
 import { usePrivateApi } from "../../auth/usePrivateApi";
-import { ProductInfo } from "../../../interfaces/productInterface";
+import { ProductInfo } from "../../../types/productTypes";
 import { useQuery } from "react-query";
 import { useNavigate, useLocation } from "react-router-dom";
-import { CustomError } from "../../../interfaces/customInterface";
+import { CustomError } from "../../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useGetInventory = () => {

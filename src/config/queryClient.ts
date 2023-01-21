@@ -1,6 +1,6 @@
 import { QueryClient } from "react-query";
 import { toast } from "react-toastify";
-import { CustomError } from "../interfaces/customInterface";
+import { CustomError } from "../types/customTypes";
 
 export const queryClient = new QueryClient({
 	defaultOptions: {

@@ -1,4 +1,4 @@
-import { CartCheckoutInfo } from "../../../interfaces/cartInterface";
+import { CartCheckoutInfo } from "../../../types/cartTypes";
 
 export default function DetailsModal({
 	numItems,

@@ -1,7 +1,7 @@
 import { usePrivateApi } from "../auth/usePrivateApi";
 import { useMutation, useQueryClient } from "react-query";
-import { OrderCreation } from "../../interfaces/orderInterface";
-import { CustomError } from "../../interfaces/customInterface";
+import { OrderCreation } from "../../types/orderTypes";
+import { CustomError } from "../../types/customTypes";
 import { toast } from "react-toastify";
 import { useOrderContext } from "../context/useOrderContext";
 import { useCartContext } from "../context/useCartContext";

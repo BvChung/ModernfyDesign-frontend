@@ -1,6 +1,6 @@
-interface SpinnerProps {
+type SpinnerProps = {
 	minHeight?: string;
-}
+};
 
 export default function Spinner({ minHeight }: SpinnerProps) {
 	return (

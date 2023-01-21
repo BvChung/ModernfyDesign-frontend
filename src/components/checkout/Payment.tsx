@@ -2,7 +2,7 @@ import { useId } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useOrderContext } from "../../hooks/context/useOrderContext";
 import { useCartContext } from "../../hooks/context/useCartContext";
-import { FormInputProps } from "../../interfaces/formInterface";
+import { FormInputProps } from "../../types/formTypes";
 import FormInput from "../form/FormInput";
 import DetailsModal from "./modal/DetailsModal";
 

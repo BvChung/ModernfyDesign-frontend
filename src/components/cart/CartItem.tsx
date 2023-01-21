@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { CartItemInfo } from "../../interfaces/cartInterface";
+import { CartItemInfo } from "../../types/cartTypes";
 import { useCartContext } from "../../hooks/context/useCartContext";
 import { cldConfig } from "../../config/cloudinaryConfig";
 import { scale } from "@cloudinary/url-gen/actions/resize";

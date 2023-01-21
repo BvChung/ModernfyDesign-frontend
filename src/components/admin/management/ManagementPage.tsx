@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useGetAccounts } from "../../../hooks/admin/management/useGetAccounts";
 import AccountRow from "./ManagementRow";
 import { accessRoles } from "../../../config/accessRoles";
-import { CurrentInfo } from "../../../interfaces/adminInterface";
+import { CurrentInfo } from "../../../types/adminTypes";
 import { useUpdateRole } from "../../../hooks/admin/management/useUpdateRole";
 import { useDeleteAccount } from "../../../hooks/admin/management/useDeleteAccount";
 import Spinner from "../../loading/Spinner";

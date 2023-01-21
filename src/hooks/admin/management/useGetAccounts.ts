@@ -1,8 +1,8 @@
 import { usePrivateApi } from "../../auth/usePrivateApi";
 import { useQuery } from "react-query";
-import { ModifyAccount } from "../../../interfaces/adminInterface";
+import { ModifyAccount } from "../../../types/adminTypes";
 import { useNavigate, useLocation } from "react-router-dom";
-import { CustomError } from "../../../interfaces/customInterface";
+import { CustomError } from "../../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useGetAccounts = () => {

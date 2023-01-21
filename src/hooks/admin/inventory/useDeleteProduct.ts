@@ -1,8 +1,8 @@
 import { usePrivateApi } from "../../auth/usePrivateApi";
 import { useMutation, useQueryClient } from "react-query";
 import { useNavigate, useLocation } from "react-router-dom";
-import { ProductInfo } from "../../../interfaces/productInterface";
-import { CustomError } from "../../../interfaces/customInterface";
+import { ProductInfo } from "../../../types/productTypes";
+import { CustomError } from "../../../types/customTypes";
 import { useCartContext } from "../../context/useCartContext";
 import { toast } from "react-toastify";
 

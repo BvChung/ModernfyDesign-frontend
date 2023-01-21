@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useQueryProducts } from "../../hooks/products/useQueryProducts";
-import { ProductInfo } from "../../interfaces/productInterface";
+import { ProductInfo } from "../../types/productTypes";
 import DisplayProduct from "./DisplayProduct";
 import Spinner from "../loading/Spinner";
 import FiltersModal from "./modal/FiltersModal";
 import { useSearchParams } from "react-router-dom";
-import { QueryProducts } from "../../interfaces/productInterface";
+import { QueryProducts } from "../../types/productTypes";
 
 export default function ProductPage() {
 	const navigate = useNavigate();

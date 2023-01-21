@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 import { useNavigate } from "react-router-dom";
-import { ProductInfo } from "../../interfaces/productInterface";
+import { ProductInfo } from "../../types/productTypes";
 import { eCommerceApiPublic } from "../../api/axios";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useGetProductInfo = (productId: string) => {

@@ -1,18 +1,10 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FilterFunctions } from "../../../types/productTypes";
 
-interface FilterProducts {
-	category: string[];
-	priceLow: number | string;
-	priceHigh: number | string;
-}
-
-interface FilterFunc {
-	handleChange(e: React.ChangeEvent<HTMLInputElement>, category: string): void;
-	setFilter: React.Dispatch<React.SetStateAction<FilterProducts>>;
-}
-
-export default function FilterModal({ handleChange, setFilter }: FilterFunc) {
+export default function FilterModal({
+	handleChange,
+	setFilter,
+}: FilterFunctions) {
 	const navigate = useNavigate();
 
 	return (
@@ -154,6 +146,7 @@ export default function FilterModal({ handleChange, setFilter }: FilterFunc) {
 						<div className="collapse-title font-semibold peer-hover:underline">
 							Price Range
 						</div>
+
 						<div className="h-fit collapse-content">
 							<div className="grid grid-cols-2 gap-x-2 gap-y-3 h-fit text-sm">
 								<div className="flex items-center gap-2">
@@ -241,7 +234,7 @@ export default function FilterModal({ handleChange, setFilter }: FilterFunc) {
 						</div>
 					</div>
 
-					<div className="modal-action justify-between items-center gap-4">
+					<div className="modal-action mt-8 justify-between items-center gap-4">
 						<label
 							htmlFor="filters-modal"
 							className="hover:link text-sm"
@@ -254,7 +247,7 @@ export default function FilterModal({ handleChange, setFilter }: FilterFunc) {
 						</label>
 						<label
 							htmlFor="filters-modal"
-							className="btn btn-primary h-11 px-8 rounded-full normal-case"
+							className="btn btn-primary h-11 px-6 rounded-md normal-case"
 							aria-label="Show results"
 						>
 							Show results

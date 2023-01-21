@@ -1,6 +1,6 @@
-interface SpinnerProps {
+type SpinnerProps = {
 	color: string;
-}
+};
 
 export default function SpinnerSm({ color }: SpinnerProps) {
 	return (

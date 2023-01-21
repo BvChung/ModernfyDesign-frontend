@@ -2,10 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import InventoryRow from "./InventoryRow";
 import { useGetInventory } from "../../../hooks/admin/inventory/useGetInventory";
-import {
-	ProductInfo,
-	SortProducts,
-} from "../../../interfaces/productInterface";
+import { ProductInfo, SortProducts } from "../../../types/productTypes";
 import Spinner from "../../loading/Spinner";
 
 export default function ProductTable() {

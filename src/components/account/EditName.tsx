@@ -2,8 +2,8 @@ import React, { useState, useId, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../hooks/context/useAuthContext";
 import FormInput from "../form/FormInput";
-import { FormInputProps } from "../../interfaces/formInterface";
-import { EditedName } from "../../interfaces/authInterface";
+import { FormInputProps } from "../../types/formTypes";
+import { EditedName } from "../../types/authTypes";
 import { useEditName } from "../../hooks/account/useEditName";
 
 export default function EditName() {

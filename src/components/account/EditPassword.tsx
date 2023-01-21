@@ -1,7 +1,7 @@
 import React, { useState, useId, useEffect } from "react";
 import FormInput from "../form/FormInput";
-import { FormInputProps } from "../../interfaces/formInterface";
-import { EditedPassword } from "../../interfaces/authInterface";
+import { FormInputProps } from "../../types/formTypes";
+import { EditedPassword } from "../../types/authTypes";
 import { useEditPassword } from "../../hooks/account/useEditPassword";
 import { useNavigate } from "react-router-dom";
 

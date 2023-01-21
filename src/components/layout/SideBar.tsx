@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../hooks/context/useAuthContext";
 
 export default function SideBar() {
+	const { user } = useAuthContext();
+
 	return (
 		<div className="drawer-side">
 			<label htmlFor="app-drawer" className="drawer-overlay"></label>
@@ -22,13 +25,23 @@ export default function SideBar() {
 						</svg>
 					</Link>
 
-					<Link
-						to="/signin"
-						className="w-fit btn btn-sm rounded-full"
-						aria-label="Move to sign in page"
-					>
-						Sign in or create account
-					</Link>
+					{!user ? (
+						<Link
+							to="/signin"
+							className="w-fit btn btn-sm rounded-md"
+							aria-label="Move to sign in page"
+						>
+							Sign in or create account
+						</Link>
+					) : (
+						<Link
+							to="/"
+							className="w-fit btn btn-sm rounded-md"
+							aria-label="Move to landing page"
+						>
+							ModernfyDesign
+						</Link>
+					)}
 				</div>
 				<ul className="menu menu-compact flex flex-col">
 					<li className="menu-title">

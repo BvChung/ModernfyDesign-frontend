@@ -1,9 +1,9 @@
 import React, { useState, useId, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { LoginCredentials } from "../../interfaces/authInterface";
+import { LoginCredentials } from "../../types/authTypes";
 import { useSignInAdmin } from "../../hooks/admin/useSignInAdmin";
-import { CustomLocationState } from "../../interfaces/customInterface";
-import { FormInputProps } from "../../interfaces/formInterface";
+import { CustomLocationState } from "../../types/customTypes";
+import { FormInputProps } from "../../types/formTypes";
 import FormInput from "../form/FormInput";
 
 export default function AdminSignIn() {
@@ -141,7 +141,7 @@ export default function AdminSignIn() {
 						className="btn btn-secondary btn-outline h-11 rounded-md w-full"
 						aria-label="Sign in as guest"
 					>
-						Sign in as guest
+						Sign in as guest admin
 					</button>
 				</div>
 			</form>

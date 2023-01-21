@@ -1,7 +1,7 @@
 import OrderHistory from "./OrderHistory";
 import { Link } from "react-router-dom";
 import { useGetOrders } from "../../hooks/orders/useGetOrders";
-import { OrderInfo } from "../../interfaces/orderInterface";
+import { OrderInfo } from "../../types/orderTypes";
 import Spinner from "../loading/Spinner";
 
 export default function OrderPage() {

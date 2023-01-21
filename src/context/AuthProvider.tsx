@@ -1,17 +1,17 @@
 import React, { createContext, useState } from "react";
-import { UserInfo } from "../interfaces/authInterface";
+import { UserInfo } from "../types/authTypes";
 
-interface AuthContextInterface {
+type AuthContextTypes = {
 	user: UserInfo;
 	setUser: React.Dispatch<React.SetStateAction<UserInfo>>;
 	logoutUser(): void;
-}
+};
 
-interface AuthProviderProps {
+type AuthProviderProps = {
 	children: React.ReactNode;
-}
+};
 
-const AuthContext = createContext({} as AuthContextInterface);
+const AuthContext = createContext({} as AuthContextTypes);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
 	const [user, setUser] = useState<UserInfo>({

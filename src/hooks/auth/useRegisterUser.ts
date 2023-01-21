@@ -2,9 +2,9 @@ import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 import { useAuthContext } from "../context/useAuthContext";
 import { storage } from "../../config/tokenStorage";
-import { UserInfo, RegisterCredentials } from "../../interfaces/authInterface";
+import { UserInfo, RegisterCredentials } from "../../types/authTypes";
 import { eCommerceApiPublic } from "../../api/axios";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 
 export const useRegisterUser = () => {
 	const { setUser } = useAuthContext();

@@ -1,9 +1,9 @@
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
-import { LoginCredentials, UserInfo } from "../../interfaces/authInterface";
+import { LoginCredentials, UserInfo } from "../../types/authTypes";
 import { useAuthContext } from "../context/useAuthContext";
 import { eCommerceApiPublic } from "../../api/axios";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 import { storage } from "../../config/tokenStorage";
 
 // Make req to api with login info => returns token

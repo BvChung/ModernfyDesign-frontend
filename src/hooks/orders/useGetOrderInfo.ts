@@ -1,8 +1,8 @@
 import { useQuery } from "react-query";
 import { usePrivateApi } from "../auth/usePrivateApi";
-import { OrderInfo } from "../../interfaces/orderInterface";
+import { OrderInfo } from "../../types/orderTypes";
 import { useNavigate, useLocation } from "react-router-dom";
-import { CustomError } from "../../interfaces/customInterface";
+import { CustomError } from "../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useGetOrderInfo = (orderId: string) => {

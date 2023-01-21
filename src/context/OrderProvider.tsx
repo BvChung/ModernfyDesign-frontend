@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
-import { OrderForm } from "../interfaces/orderInterface";
+import { OrderForm } from "../types/orderTypes";
 
-interface OrderContextInterface {
+type OrderContextTypes = {
 	myOrder: OrderForm;
 	setMyOrder: React.Dispatch<React.SetStateAction<OrderForm>>;
 	handlePayment(
@@ -15,13 +15,13 @@ interface OrderContextInterface {
 			| React.ChangeEvent<HTMLSelectElement>
 	): void;
 	clearMyOrder(): void;
-}
+};
 
-interface OrderProviderProps {
+type OrderProviderProps = {
 	children: React.ReactNode;
-}
+};
 
-export const OrderContext = createContext({} as OrderContextInterface);
+export const OrderContext = createContext({} as OrderContextTypes);
 
 export const OrderProvider = ({ children }: OrderProviderProps) => {
 	const [myOrder, setMyOrder] = useState<OrderForm>({

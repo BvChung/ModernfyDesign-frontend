@@ -1,12 +1,9 @@
 import { usePrivateApi } from "../../auth/usePrivateApi";
 import { useMutation, useQueryClient } from "react-query";
-import {
-	ProductUpdate,
-	ProductInfo,
-} from "../../../interfaces/productInterface";
+import { ProductUpdate, ProductInfo } from "../../../types/productTypes";
 import { useCartContext } from "../../context/useCartContext";
 import { useNavigate, useLocation } from "react-router-dom";
-import { CustomError } from "../../../interfaces/customInterface";
+import { CustomError } from "../../../types/customTypes";
 import { toast } from "react-toastify";
 
 export const useUpdateProduct = (productId: string | undefined) => {

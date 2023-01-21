@@ -10,6 +10,7 @@ export default function LandingPage() {
 					title="The Modern Collection"
 					subTitle="Simple and Elegant"
 					slides={carouselData}
+					delay={5000}
 				/>
 			</div>
 

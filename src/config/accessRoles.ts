@@ -1,4 +1,4 @@
-interface Roles {
+type Roles = {
 	Admin: number;
 	Manager: number;
 	Consumer: number;
