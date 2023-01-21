@@ -1,11 +1,11 @@
-interface Product {
+type Product = {
 	name: string;
 	description: string;
 	color: string;
 	category: string;
-}
+};
 
-export interface ProductInfo extends Product {
+export type ProductInfo = {
 	_id: string;
 	image: string;
 	imageCloudId: string;
@@ -13,32 +13,43 @@ export interface ProductInfo extends Product {
 	[key: string]: any;
 	createdBy: string;
 	setSearchText?: React.Dispatch<React.SetStateAction<string>>;
-}
+} & Product;
 
-export interface ProductCreation extends Product {
+export type ProductCreation = {
 	fileName: string | null;
 	image: string | null;
 	price: number;
-}
+} & Product;
 
-export interface ProductUpdate extends Product {
+export type ProductUpdate = {
 	fileName?: string | null;
 	image?: string | null;
 	price: number;
-}
+} & Product;
 
-export interface ProductForm extends Product {
+export type ProductForm = {
 	price: string;
 	color: string;
-}
+} & Product;
 
-export interface QueryProducts {
+export type QueryProducts = {
 	category: string[];
 	priceLow: number | string;
 	priceHigh: number | string;
-}
+};
 
-export interface SortProducts {
+export type FilterProducts = {
+	category: string[];
+	priceLow: number | string;
+	priceHigh: number | string;
+};
+
+export type FilterFunctions = {
+	handleChange(e: React.ChangeEvent<HTMLInputElement>, category: string): void;
+	setFilter: React.Dispatch<React.SetStateAction<FilterProducts>>;
+};
+
+export type SortProducts = {
 	field: string;
 	name: {
 		sortDescending: boolean;
@@ -50,4 +61,4 @@ export interface SortProducts {
 		sortDescending: boolean;
 	};
 	[key: string]: any;
-}
+};

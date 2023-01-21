@@ -1,4 +1,4 @@
-export interface ModifyAccount {
+export type ModifyAccount = {
 	_id: string;
 	firstName: string;
 	lastName: string;
@@ -9,14 +9,14 @@ export interface ModifyAccount {
 	setCurrentAccount?: React.Dispatch<React.SetStateAction<CurrentInfo>>;
 	setEditingAccount?: React.Dispatch<React.SetStateAction<boolean>>;
 	setDeleteConfirmation?: React.Dispatch<React.SetStateAction<boolean>>;
-}
+};
 
-export interface CurrentInfo {
+export type CurrentInfo = {
 	_id: string;
 	role: number;
-}
+};
 
-export interface UpdateManagement {
+export type UpdateManagement = {
 	_id: string;
 	role: number;
-}
+};

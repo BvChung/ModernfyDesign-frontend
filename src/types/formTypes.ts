@@ -1,4 +1,4 @@
-export interface FormInputProps {
+export type FormInputProps = {
 	key?: string;
 	id: string;
 	type: string;
@@ -22,4 +22,4 @@ export interface FormInputProps {
 	maxLength?: number;
 	htmlInputSize?: string;
 	width?: string;
-}
+};

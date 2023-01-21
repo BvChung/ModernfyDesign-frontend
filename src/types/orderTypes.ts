@@ -1,4 +1,4 @@
-interface OrderShippingInfo {
+type OrderShippingInfo = {
 	firstName: string;
 	lastName: string;
 	address: string;
@@ -8,9 +8,9 @@ interface OrderShippingInfo {
 	zipCode: string;
 	phone: string;
 	email: string;
-}
+};
 
-interface OrderPaymentInfo {
+type OrderPaymentInfo = {
 	cardNumber: string;
 	cardHolderFirstName: string;
 	cardHolderLastName: string;
@@ -19,16 +19,16 @@ interface OrderPaymentInfo {
 	securityCode: string;
 	phone: string;
 	subTotal: number;
-}
+};
 
-export interface OrderForm {
+export type OrderForm = {
 	shippingInfo: OrderShippingInfo;
 	paymentInfo: OrderPaymentInfo;
 	completedShippingForm: boolean;
 	completedPaymentForm: boolean;
-}
+};
 
-export interface OrderPurchasedItems {
+export type OrderPurchasedItems = {
 	_id: string;
 	image: string;
 	imageCloudId: string;
@@ -38,17 +38,17 @@ export interface OrderPurchasedItems {
 	color: string;
 	category: string;
 	quantity?: number;
-}
+};
 
 // const now = new Date("2022-07-08T23:43:14.121+00:00"); => from mongoDB created at
-export interface OrderInfo {
+export type OrderInfo = {
 	_id?: string;
 	purchasedItems: OrderPurchasedItems[];
 	shippingInfo: OrderShippingInfo;
 	paymentInfo: OrderPaymentInfo;
 	createdAt?: string | number | Date;
-}
+};
 
-export interface OrderCreation extends OrderInfo {
+export type OrderCreation = {
 	accountId: string;
-}
+} & OrderInfo;

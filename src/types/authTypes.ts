@@ -1,37 +1,37 @@
-export interface LoginCredentials {
+export type LoginCredentials = {
 	isGuestAccount?: boolean;
 	email: string;
 	password: string;
-}
+};
 
-export interface RegisterCredentials {
+export type RegisterCredentials = {
 	firstName: string;
 	lastName: string;
 	email: string;
 	password: string;
 	verifyPassword: string;
-}
+};
 
-export interface UserInfo {
+export type UserInfo = {
 	_id: string;
 	firstName: string;
 	lastName: string;
 	email: string;
 	role: number;
 	accessToken: string;
-}
+};
 
-export interface EditedName {
+export type EditedName = {
 	firstName: string;
 	lastName: string;
-}
+};
 
-export interface EditedEmail {
+export type EditedEmail = {
 	email: string;
-}
+};
 
-export interface EditedPassword {
+export type EditedPassword = {
 	currentPassword: string;
 	newPassword: string;
 	verifyNewPassword?: string;
-}
+};

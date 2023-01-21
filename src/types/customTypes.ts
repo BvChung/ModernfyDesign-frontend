@@ -1,4 +1,4 @@
-export interface CustomError extends Error {
+export type CustomError = {
 	code?: string;
 	response?: {
 		data: {
@@ -7,9 +7,9 @@ export interface CustomError extends Error {
 		};
 		status: number;
 	};
-}
+} & Error;
 
-export interface CustomLocationState {
+export type CustomLocationState = {
 	pathname: string | null;
 	search: string | null;
 	hash: string | null;
@@ -23,4 +23,4 @@ export interface CustomLocationState {
 		};
 	};
 	key: string | null;
-}
+};
