@@ -202,7 +202,7 @@ export default function ManageProduct() {
 								<input
 									type="text"
 									placeholder="Name"
-									className="input input-bordered w-full md:w-[688px]"
+									className="input input-bordered w-full md:w-[688px] bg-slate-50 rounded-md"
 									name="name"
 									value={productFormData.name}
 									onChange={handleChange}
@@ -219,7 +219,7 @@ export default function ManageProduct() {
 									name="category"
 									value={productFormData.category}
 									onChange={handleChange}
-									className="select select-bordered w-full md:w-[688px]"
+									className="select select-bordered w-full md:w-[688px] bg-slate-50 rounded-md"
 									required
 									aria-label="Product category select"
 								>
@@ -242,7 +242,7 @@ export default function ManageProduct() {
 								<input
 									type="number"
 									placeholder="Price"
-									className="input input-bordered w-full md:w-[688px]"
+									className="input input-bordered w-full md:w-[688px] bg-slate-50 rounded-md"
 									name="price"
 									value={productFormData.price}
 									onChange={handleChange}
@@ -258,7 +258,7 @@ export default function ManageProduct() {
 								<input
 									type="text"
 									placeholder="Color"
-									className="input input-bordered w-full md:w-[688px]"
+									className="input input-bordered w-full md:w-[688px] bg-slate-50 rounded-md"
 									name="color"
 									value={productFormData.color}
 									onChange={handleChange}
@@ -272,7 +272,7 @@ export default function ManageProduct() {
 									<span className="label-text">Description</span>
 								</label>
 								<textarea
-									className="textarea textarea-bordered overflow-auto resize w-full md:w-[688px] h-36"
+									className="textarea textarea-bordered overflow-auto resize w-full md:w-[688px] h-36 bg-slate-50 rounded-md"
 									placeholder="Description"
 									name="description"
 									value={productFormData.description}
@@ -354,7 +354,7 @@ export default function ManageProduct() {
 
 							<div className="flex justify-end max-w-2xl">
 								<button
-									className="btn btn-primary h-11 w-fit rounded-full px-8"
+									className="btn btn-primary h-11 w-fit rounded-md px-6"
 									aria-label="Save updated product"
 								>
 									Save Changes

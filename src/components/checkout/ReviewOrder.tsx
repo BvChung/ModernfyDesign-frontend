@@ -353,14 +353,14 @@ export default function ReviewOrder() {
 							</div>
 
 							<div className="flex w-full lg:w-auto justify-between">
-								<div className="flex flex-col w-36 justify-between items-end mr-6 lg:mr-8 text-xs lg:text-base">
-									<span className="text-gray-500 text-sm">Card number</span>
-									<span className="text-gray-500 text-sm">Name on card</span>
-									<span className="text-gray-500 text-sm">Expiration</span>
+								<div className="flex flex-col w-36 justify-between items-end mr-6 lg:mr-8 text-gray-500 text-sm">
+									<span>Card number</span>
+									<span>Name on card</span>
+									<span>Expiration</span>
 								</div>
 								<div className="flex flex-col">
 									<div className="flex gap-4">
-										<div className="flex flex-col w-48 gap-2 font-base lg:font-medium text-sm lg:text-base">
+										<div className="flex flex-col w-48 gap-2 font-base lg:font-medium text-sm lg:text-base text-gray-900">
 											<span>
 												Ending in{" "}
 												{myOrder.paymentInfo.cardNumber.slice(
@@ -382,7 +382,7 @@ export default function ReviewOrder() {
 								</div>
 								<Link
 									to={"/checkout/payment"}
-									className="hover:link ml-4 text-sm hidden lg:inline-flex"
+									className="hover:link ml-4 text-sm hidden lg:inline-flex text-gray-900"
 									aria-label="Edit payment info"
 								>
 									Edit
@@ -394,31 +394,35 @@ export default function ReviewOrder() {
 					<div className="rounded-lg shadow-sm h-fit w-full lg:w-1/3 border-[1px] py-6 px-4 flex flex-col items-center">
 						<div className="w-full flex items-center justify-between mb-4">
 							<div>
-								<span className="font-medium mr-2 text-sm">Subtotal</span>
+								<span className="font-medium mr-2 text-sm text-gray-900">
+									Subtotal
+								</span>
 								<span className="text-gray-700 text-sm">
 									({cartItemsInfo.numItems} items)
 								</span>
 							</div>
-							<div className="font-semibold">
+							<div className="font-semibold text-gray-900">
 								${cartItemsInfo.subTotal.toFixed(2)}
 							</div>
 						</div>
 
 						<div className="w-full flex items-center justify-between mb-4">
-							<span className="font-medium text-sm">Shipping & Handling</span>
-							<span className="font-semibold">Free</span>
+							<span className="font-medium text-sm text-gray-900">
+								Shipping & Handling
+							</span>
+							<span className="font-semibold text-gray-900">Free</span>
 						</div>
 
 						<div className="w-full flex items-center justify-between border-b-[1px] border-gray-400 pb-2 mb-4">
-							<span className="font-medium text-sm">Taxes</span>
-							<span className="font-semibold">
+							<span className="font-medium text-sm text-gray-900">Taxes</span>
+							<span className="font-semibold text-gray-900">
 								${cartItemsInfo.tax.toFixed(2)}
 							</span>
 						</div>
 
 						<div className="w-full flex items-center justify-between mb-6">
-							<div className="font-semibold">Grand Total</div>
-							<div className="font-bold">
+							<div className="font-semibold text-gray-900">Grand Total</div>
+							<div className="font-bold text-gray-900">
 								${cartItemsInfo.grandTotal.toFixed(2)}
 							</div>
 						</div>
@@ -427,7 +431,7 @@ export default function ReviewOrder() {
 							onClick={() => {
 								mutate(orderDetails!);
 							}}
-							className="btn btn-info h-11 w-full rounded-full"
+							className="btn btn-info h-11 w-full rounded-md bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2"
 							aria-label="Place order"
 						>
 							Place order

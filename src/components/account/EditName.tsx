@@ -142,13 +142,13 @@ export default function EditName() {
 								});
 								navigate("/account");
 							}}
-							className="btn btn-outline btn-accent rounded-full h-11"
+							className="btn btn-outline btn-accent rounded-md h-11 px-4"
 							aria-label="Cancel editing name"
 						>
 							Cancel
 						</button>
 						<button
-							className="btn btn-secondary rounded-full h-11 px-6"
+							className="btn btn-secondary rounded-md h-11 px-6"
 							aria-label="Submit new name"
 						>
 							Save

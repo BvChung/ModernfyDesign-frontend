@@ -1,5 +1,4 @@
 import { lazy } from "react";
-import "./App.css";
 import {
 	createBrowserRouter,
 	RouterProvider,

@@ -296,16 +296,16 @@ export default function Payment() {
 						})}
 					</div>
 
-					<div className="flex w-full gap-4 justify-end">
+					<div className="flex w-full gap-6 justify-end mt-8">
 						<Link
 							to="/checkout/shipping"
-							className="btn btn-outline btn-accent h-11 rounded-full px-7"
+							className="btn btn-outline btn-accent h-11 rounded-md px-6"
 							aria-label="Return to shipping page"
 						>
 							Return
 						</Link>
 						<button
-							className="btn px-10 h-11 rounded-full btn-secondary"
+							className="btn px-6 h-11 rounded-md btn-secondary"
 							aria-label="Save and continue to review order page"
 						>
 							Save & Continue

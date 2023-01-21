@@ -6,6 +6,7 @@ import { useAuthContext } from "../../hooks/context/useAuthContext";
 import FormInput from "../form/FormInput";
 import { FormInputProps } from "../../interfaces/formInterface";
 import DetailsModal from "./modal/DetailsModal";
+import StateOptions from "./StateOptions";
 
 export default function Shipping() {
 	const { myOrder, handleShipping, setMyOrder } = useOrderContext();
@@ -241,64 +242,14 @@ export default function Shipping() {
 								name="state"
 								value={myOrder.shippingInfo.state}
 								onChange={handleShipping}
-								className="select select-md select-bordered"
+								className="select select-md select-bordered bg-slate-50"
 								required
 								aria-label="Select state"
 							>
 								<option disabled value="">
 									Select a State
 								</option>
-								<option value="AL">Alabama</option>
-								<option value="AK">Alaska</option>
-								<option value="AZ">Arizona</option>
-								<option value="AR">Arkansas</option>
-								<option value="CA">California</option>
-								<option value="CO">Colorado</option>
-								<option value="CT">Connecticut</option>
-								<option value="DE">Delaware</option>
-								<option value="DC">District Of Columbia</option>
-								<option value="FL">Florida</option>
-								<option value="GA">Georgia</option>
-								<option value="HI">Hawaii</option>
-								<option value="ID">Idaho</option>
-								<option value="IL">Illinois</option>
-								<option value="IN">Indiana</option>
-								<option value="IA">Iowa</option>
-								<option value="KS">Kansas</option>
-								<option value="KY">Kentucky</option>
-								<option value="LA">Louisiana</option>
-								<option value="ME">Maine</option>
-								<option value="MD">Maryland</option>
-								<option value="MA">Massachusetts</option>
-								<option value="MI">Michigan</option>
-								<option value="MN">Minnesota</option>
-								<option value="MS">Mississippi</option>
-								<option value="MO">Missouri</option>
-								<option value="MT">Montana</option>
-								<option value="NE">Nebraska</option>
-								<option value="NV">Nevada</option>
-								<option value="NH">New Hampshire</option>
-								<option value="NJ">New Jersey</option>
-								<option value="NM">New Mexico</option>
-								<option value="NY">New York</option>
-								<option value="NC">North Carolina</option>
-								<option value="ND">North Dakota</option>
-								<option value="OH">Ohio</option>
-								<option value="OK">Oklahoma</option>
-								<option value="OR">Oregon</option>
-								<option value="PA">Pennsylvania</option>
-								<option value="RI">Rhode Island</option>
-								<option value="SC">South Carolina</option>
-								<option value="SD">South Dakota</option>
-								<option value="TN">Tennessee</option>
-								<option value="TX">Texas</option>
-								<option value="UT">Utah</option>
-								<option value="VT">Vermont</option>
-								<option value="VA">Virginia</option>
-								<option value="WA">Washington</option>
-								<option value="WV">West Virginia</option>
-								<option value="WI">Wisconsin</option>
-								<option value="WY">Wyoming</option>
+								<StateOptions />
 							</select>
 						</div>
 
@@ -323,9 +274,9 @@ export default function Shipping() {
 						})}
 					</div>
 
-					<div className="flex justify-end w-full">
+					<div className="flex justify-end w-full mt-8">
 						<button
-							className="btn px-10 h-11 rounded-full btn-secondary"
+							className="btn px-6 h-11 rounded-md btn-secondary"
 							aria-label="Save and continue to payment page"
 						>
 							Save & Continue

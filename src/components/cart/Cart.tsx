@@ -38,7 +38,7 @@ export default function CartPage() {
 		user.email === process.env.REACT_APP_GUEST_ADMIN_EMAIL;
 
 	return (
-		<div className="flex flex-col items-center justify-center mt-8 mb-16 mx-4 sm:mx-6 lg:mx-0">
+		<div className="flex flex-col items-center justify-center mt-8 mb-20 mx-4 sm:mx-6 lg:mx-0">
 			<div className="flex items-center gap-2 w-full mb-6 lg:max-w-5xl xl:max-w-6xl">
 				<span className="font-medium text-xl sm:text-2xl">My Cart</span>
 			</div>
@@ -63,7 +63,7 @@ export default function CartPage() {
 							</div>
 							<Link
 								to={"/products"}
-								className="btn btn-secondary h-11 px-10 rounded-full"
+								className="btn btn-secondary h-11 px-10 rounded-md shadow-md"
 								aria-label="Move to products page"
 							>
 								Browse our products
@@ -118,9 +118,9 @@ export default function CartPage() {
 
 					<div className="w-full">
 						<Link
-							className={`btn h-11 ${
-								cartItemsInfo.numItems === 0 ? "btn-disabled" : "btn-info"
-							}  rounded-full w-full `}
+							className={`btn bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2 
+							h-11 rounded-md shadow-md w-full 
+							${cartItemsInfo.numItems === 0 ? "btn-disabled" : "btn-info"}`}
 							to={"/checkout/shipping"}
 							aria-label="Move to checkout page"
 						>
@@ -131,11 +131,8 @@ export default function CartPage() {
 					{guestAccountActive && (
 						<div className="w-full border-t-[1px] mt-4">
 							<button
-								className={`btn h-11 ${
-									cartItemsInfo.numItems === 0
-										? "btn-disabled"
-										: "btn-outline btn-accent"
-								}  rounded-full mt-4 w-full `}
+								className={`btn btn-secondary h-11 rounded-md shadow-md mt-4 w-full 
+								${cartItemsInfo.numItems === 0 ? "btn-disabled" : "btn-outline btn-primary"}`}
 								onClick={() => {
 									if (user.email === process.env.REACT_APP_GUEST_EMAIL) {
 										setMyOrder(guestDemoInfo);

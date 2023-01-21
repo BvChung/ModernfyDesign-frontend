@@ -125,7 +125,8 @@ export default function AdminSignIn() {
 
 				<div className="flex flex-col w-full justify-center items-start">
 					<button
-						className="btn btn-info h-11 rounded-full w-full mb-4"
+						className="btn bg-accent4 border-accent4 hover:border-accent2 hover:bg-accent2 
+						h-11 rounded-md shadow-md w-full mb-4"
 						aria-label="Sign in"
 					>
 						Sign in
@@ -137,7 +138,7 @@ export default function AdminSignIn() {
 								password: process.env.REACT_APP_GUEST_ADMIN_PASSWORD!,
 							});
 						}}
-						className="btn btn-secondary btn-outline h-11 rounded-full w-full"
+						className="btn btn-secondary btn-outline h-11 rounded-md w-full"
 						aria-label="Sign in as guest"
 					>
 						Sign in as guest

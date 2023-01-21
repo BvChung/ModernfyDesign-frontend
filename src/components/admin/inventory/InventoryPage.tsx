@@ -156,7 +156,7 @@ export default function ProductTable() {
 					}}
 					className={`btn btn-info ${
 						findGuestProduct ? "" : "btn-outline"
-					} h-11 w-40 rounded-full`}
+					} h-11 w-40 rounded-md`}
 				>
 					<span className="text-sm">Product Demo</span>
 				</button>
