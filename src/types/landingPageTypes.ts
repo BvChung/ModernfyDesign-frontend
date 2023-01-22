@@ -8,7 +8,7 @@ export type CarouselProps = {
 export type CarouselIndicatorProps = {
 	currentSlide: number;
 	toSlide: number;
-	toSpecificSlide(slide: number): void;
+	changeSlide(slide: number): void;
 };
 
 export type CategoryProps = {

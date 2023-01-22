@@ -3,16 +3,16 @@ import { CarouselIndicatorProps } from "../../../types/landingPageTypes";
 export default function CarouselIndicator({
 	currentSlide,
 	toSlide,
-	toSpecificSlide,
+	changeSlide,
 }: CarouselIndicatorProps) {
-	const active = currentSlide === toSlide ? "bg-gray-900" : "bg-gray-100";
+	const isActive = currentSlide === toSlide ? "bg-gray-900" : "bg-gray-100";
 	return (
 		<button
 			onClick={() => {
-				toSpecificSlide(toSlide);
+				changeSlide(toSlide);
 			}}
 			name="carouselButtons"
-			className={`rounded-full h-1 w-12 ${active}`}
+			className={`rounded-full h-1 w-12 ${isActive}`}
 			aria-label="Move to specific carousel image"
 		/>
 	);

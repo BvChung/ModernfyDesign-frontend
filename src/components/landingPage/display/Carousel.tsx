@@ -52,7 +52,7 @@ export default function Carousel({
 		setIsRunning(false);
 	}
 
-	function toSpecificSlide(slide: number) {
+	function changeSlide(slide: number) {
 		stopTimer();
 		setCurrentSlide(slide);
 		startTimer();
@@ -157,7 +157,7 @@ export default function Carousel({
 							key={i}
 							currentSlide={currentSlide}
 							toSlide={i}
-							toSpecificSlide={toSpecificSlide}
+							changeSlide={changeSlide}
 						/>
 					);
 				})}
