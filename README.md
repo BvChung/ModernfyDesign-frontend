@@ -18,6 +18,7 @@ ModernfyDesign is a modern e-commerce furniture store with simulated transaction
 - [React](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [daisyUI](https://daisyui.com/)
+- [Cloudinary](https://cloudinary.com/)
 
 ## Development
 
