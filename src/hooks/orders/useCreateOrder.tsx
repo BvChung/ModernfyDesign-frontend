@@ -72,7 +72,6 @@ export const useCreateOrder = () => {
 				draggable: true,
 				closeOnClick: true,
 			});
-			console.log(data);
 		},
 	});
 };

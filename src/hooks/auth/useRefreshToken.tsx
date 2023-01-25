@@ -9,8 +9,6 @@ export const useRefreshToken = () => {
 		try {
 			const response = await eCommerceApiPublic.get("/api/refresh");
 
-			console.log(`Token obtained : ${response.data}`);
-
 			storage.setToken(response.data);
 
 			setUser((prev) => {
@@ -22,8 +20,7 @@ export const useRefreshToken = () => {
 
 			return response.data;
 		} catch (error) {
-			console.error(error);
-			// return Promise.reject(error);
+			const err = error;
 		}
 	};
 
