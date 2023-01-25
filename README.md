@@ -1,6 +1,6 @@
-# ModernfyDesign Frontend
+# [ModernfyDesign](https://modernfydesign.onrender.com)
 
-### [ModernfyDesign backend](https://github.com/BvChung/MordernfyDesign-backend)
+### Link to [ModernfyDesign backend](https://github.com/BvChung/MordernfyDesign-backend)
 
 ## Overview
 
