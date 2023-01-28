@@ -46,7 +46,7 @@ export default function ProductInfo() {
 					<div className="flex flex-col-reverse md:flex-row w-full gap-8 md:gap-20 md:justify-between mb-8 md:mb-12">
 						<figure className="flex justify-center">{productImage}</figure>
 
-						<div className="flex flex-col w-full md:w-[21rem] h-fit py-6 border-[1px] rounded-lg shadow-sm">
+						<div className="flex flex-col w-full md:w-[21rem] h-fit pt-6 border-[1px] rounded-lg shadow-sm">
 							<div className="px-6">
 								<p className="font-semibold text-xl mb-2 text-gray-900">
 									{productInfo.name}
@@ -135,7 +135,7 @@ export default function ProductInfo() {
 								</div>
 							</div>
 
-							<div className="hidden md:flex md:flex-col md:border-t-[1px] pt-0 md:pt-4 px-6 gap-5 bg-gray-50 w-full">
+							<div className="hidden md:flex md:flex-col md:border-t-[1px] pt-0 md:pt-4 px-6 pb-6 gap-5 bg-gray-50 w-full">
 								<div className="flex items-center gap-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
