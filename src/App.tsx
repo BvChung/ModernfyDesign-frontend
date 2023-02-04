@@ -5,6 +5,7 @@ import {
 	Route,
 	Outlet,
 	createRoutesFromElements,
+	redirect,
 } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import LandingPage from "./components/landingPage/LandingPage";
@@ -13,6 +14,7 @@ import PersistLogin from "./components/protected/PersistLogin";
 import RequireAuth from "./components/protected/RequireAuth";
 import NotFound from "./components/error/NotFound";
 import { accessRoles } from "./config/accessRoles";
+import { useAuthContext } from "./hooks/context/useAuthContext";
 import "react-toastify/dist/ReactToastify.css";
 
 const Cart = lazy(() => import("./components/cart/Cart"));
@@ -22,8 +24,8 @@ const OrderInfo = lazy(() => import("./components/orders/OrderInfo"));
 const Payment = lazy(() => import("./components/checkout/Payment"));
 const Shipping = lazy(() => import("./components/checkout/Shipping"));
 const ReviewOrder = lazy(() => import("./components/checkout/ReviewOrder"));
-const SignIn = lazy(() => import("./components/user/SignIn"));
-const Register = lazy(() => import("./components/user/Register"));
+const SignIn = lazy(() => import("./components/auth/SignIn"));
+const Register = lazy(() => import("./components/auth/Register"));
 const AccountPage = lazy(() => import("./components/account/AccountPage"));
 const EditName = lazy(() => import("./components/account/EditName"));
 const EditEmail = lazy(() => import("./components/account/EditEmail"));
@@ -53,6 +55,7 @@ const appRouter = createBrowserRouter(
 				<Route path="signin" element={<SignIn />} />
 				<Route path="adminsignin" element={<AdminSignIn />} />
 				<Route path="register" element={<Register />} />
+
 				<Route path="products" element={<Outlet />}>
 					<Route index element={<ProductPage />} />
 					<Route path=":id" element={<ProductInfo />} />

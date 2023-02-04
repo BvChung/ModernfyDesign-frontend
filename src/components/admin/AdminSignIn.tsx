@@ -4,15 +4,17 @@ import { LoginCredentials } from "../../types/authTypes";
 import { useSignInAdmin } from "../../hooks/admin/useSignInAdmin";
 import { CustomLocationState } from "../../types/customTypes";
 import { FormInputProps } from "../../types/formTypes";
+import SpinnerSm from "../loading/SpinnerSm";
 import FormInput from "../form/FormInput";
 
 export default function AdminSignIn() {
 	const navigate = useNavigate();
 	const location = useLocation() as CustomLocationState;
 	const from = location.state?.from?.pathname || "/admin";
-	const { isSuccess, mutate } = useSignInAdmin();
+	const { isSuccess, mutate, isLoading } = useSignInAdmin();
 
 	const [loginCredentials, setLoginCredentials] = useState<LoginCredentials>({
+		isGuestAccount: false,
 		email: "",
 		password: "",
 	});
@@ -129,11 +131,16 @@ export default function AdminSignIn() {
 						h-11 rounded-md shadow-md w-full mb-4"
 						aria-label="Sign in"
 					>
-						Sign in
+						{isLoading && !loginCredentials.isGuestAccount ? (
+							<SpinnerSm color="text-white" />
+						) : (
+							"Sign in"
+						)}
 					</button>
 					<button
 						onClick={() => {
 							setLoginCredentials({
+								isGuestAccount: true,
 								email: process.env.REACT_APP_GUEST_ADMIN_EMAIL!,
 								password: process.env.REACT_APP_GUEST_ADMIN_PASSWORD!,
 							});
@@ -141,7 +148,11 @@ export default function AdminSignIn() {
 						className="btn btn-secondary btn-outline h-11 rounded-md w-full"
 						aria-label="Sign in as guest"
 					>
-						Sign in as guest admin
+						{isLoading && loginCredentials.isGuestAccount ? (
+							<SpinnerSm color="text-gray" />
+						) : (
+							"Sign in as guest admin"
+						)}
 					</button>
 				</div>
 			</form>
