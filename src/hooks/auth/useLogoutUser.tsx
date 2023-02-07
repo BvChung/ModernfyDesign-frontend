@@ -23,7 +23,7 @@ export const useLogoutUser = () => {
 	return useMutation(logout, {
 		onSuccess: () => {
 			toast.success("User has been logged out");
-			queryClient.cancelQueries("user");
+			queryClient.cancelQueries("orders");
 			logoutUser();
 			storage.clearToken();
 			navigate("/");
