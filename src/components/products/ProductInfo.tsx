@@ -40,7 +40,7 @@ export default function ProductInfo() {
 	}
 
 	return (
-		<div className="flex flex-col items-center justify-center my-8 md:mt-10 md:mb-20 mx-2">
+		<div className="flex flex-col items-center justify-center my-8 md:mt-10 md:mb-20 mx-4">
 			{isSuccess && (
 				<div className="flex flex-col items-center justify-center w-full lg:max-w-5xl xl:max-w-6xl">
 					<div className="flex flex-col-reverse md:flex-row w-full gap-8 md:gap-20 md:justify-between mb-8 md:mb-12">
@@ -55,7 +55,7 @@ export default function ProductInfo() {
 									${productInfo.price.toFixed(2)}
 								</p>
 
-								<div className="mb-0 md:mb-4">
+								<div className="mb-4">
 									{!foundItem ? (
 										<button
 											onClick={() => {
